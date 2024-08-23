@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player</title>
+  <link rel="stylesheet" href="styles_audio.css">
+</head>
+<body>
+  <div class="container">
+    <div class="draggable-container">
+      <img src="audio_img.png" alt="Cabin Image" class="cabin-image" id="draggable-image">
+      <button id="reverse-btn" class="player-btn hidden">
+        Reverter áudio
+      </button>
+    </div>
+    <input type="range" id="audio-slider" class="audio-slider" min="0" max="100" value="0">
+    <div class="player-controls">
+      <button id="play-btn" class="player-btn">
+        <img src="play.png" alt="Play">
+      </button>
+      <button id="pause-btn" class="player-btn">
+        <img src="pause.png" alt="Pause">
+      </button>
+    </div>
+    <audio id="audio-player" src="audio.mp3"></audio>
+  </div>
+  <script src="script_audio.js"></script>
+</body>
+</html>

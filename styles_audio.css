@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    cursor: url('seta.png'), auto; /* Substitua 'seta.png' pelo arquivo de sua seta personalizada */
+  }
+  
+  .container {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .cabin-image {
+    max-width: 600px;
+    height: auto;
+    display: block;
+  }
+  
+  .player-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .player-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .player-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .player-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .audio-slider {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .draggable-container {
+    position: relative;
+  }
+  
+  #draggable-image {
+    cursor: grab;
+  }
+  
+  #reverse-btn {
+    position: absolute;
+    top: 260px; /* Ajuste a posição vertical */
+    left: 290px; /* Ajuste a posição horizontal */
+    transform: translate(-50%, -50%);
+  }
+  
