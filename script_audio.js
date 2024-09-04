@@ -29,6 +29,12 @@ reverseBtn.addEventListener('click', () => {
   audioPlayer.src = 'audio_2.mp3';
   audioPlayer.play();
   reverseBtn.classList.add('hidden');
+
+  // Exibir mensagem após 1 minuto
+  setTimeout(() => {
+    alert("Dica: Tente retirar o tubo de memória do mcgucket");
+    reverseBtn.classList.remove('hidden');
+  }, 60000 ); // 60000 milissegundos = 1 minuto
 });
 
 audioPlayer.addEventListener('timeupdate', () => {
@@ -43,10 +49,3 @@ audioSlider.addEventListener('input', () => {
     audioPlayer.play();
   }
 });
-
-
-// Exibir mensagem após 1 minuto se o áudio não tiver sido trocado
-setTimeout(() => {
-    alert("Dica: Tente retirar o tubo de memória do mcgucket");
-    reverseBtn.classList.remove('hidden');
-}, 20000); // 60000 milissegundos = 1 minuto
