@@ -9,11 +9,19 @@ let startY = 0;
 let isDragging = false;
 
 playBtn.addEventListener('click', () => {
-  audioPlayer.play();
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    playBtn.classList.add('hidden');
+    pauseBtn.classList.remove('hidden');
+  }
 });
 
 pauseBtn.addEventListener('click', () => {
-  audioPlayer.pause();
+  if (!audioPlayer.paused) {
+    audioPlayer.pause();
+    pauseBtn.classList.add('hidden');
+    playBtn.classList.remove('hidden');
+  }
 });
 
 reverseBtn.addEventListener('click', () => {
@@ -30,6 +38,9 @@ audioPlayer.addEventListener('timeupdate', () => {
 audioSlider.addEventListener('input', () => {
   const value = (audioSlider.value / 100) * audioPlayer.duration;
   audioPlayer.currentTime = value;
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+  }
 });
 
 // Executa a ação após 1 minuto iniciado a página
