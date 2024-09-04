@@ -33,14 +33,9 @@ audioSlider.addEventListener('input', () => {
 });
 
 
-
-
 // Exibir mensagem após 2 minutos se o áudio não tiver sido trocado
 setTimeout(() => {
-   alert("Dica: Tente retirar o tubo de memória do mcgucket");
-
-      reverseBtn.classList.remove('hidden');
-    
-  
+   alert("Okay, vou te dar uma mãozinha");
+   reverseBtn.classList.remove('hidden');
 });
 }, 60000); // 120000 milissegundos = 2 minutos
