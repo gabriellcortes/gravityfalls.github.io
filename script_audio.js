@@ -7,64 +7,40 @@ const draggableImage = document.getElementById('draggable-image');
 
 let startY = 0;
 let isDragging = false;
-let audioChanged = false;
-
-let timer;
 
 playBtn.addEventListener('click', () => {
-  if (audioPlayer.paused) {
-    audioPlayer.play();
-    playBtn.classList.add('hidden');
-    pauseBtn.classList.remove('hidden');
-  }
+  audioPlayer.play();
 });
 
 pauseBtn.addEventListener('click', () => {
-  if (!audioPlayer.paused) {
-    audioPlayer.pause();
-    pauseBtn.classList.add('hidden');
-    playBtn.classList.remove('hidden');
-  }
+  audioPlayer.pause();
 });
 
-// Iniciar o timer de 1 minuto
-timer = setTimeout(() => {
-  alert("Dica: Tente retirar o tubo de memória do mcgucket");
-  reverseBtn.classList.remove('hidden');
+reverseBtn.addEventListener('click', () => {
   audioPlayer.src = 'audio_2.mp3';
   audioPlayer.play();
   reverseBtn.classList.add('hidden');
-}, 60000); // 60000 milissegundos = 1 minuto
+});
 
 audioPlayer.addEventListener('timeupdate', () => {
   const value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
   audioSlider.value = value;
-
-  // Reiniciar o timer sempre que o áudio for reproduzido
-  clearTimeout(timer);
-  timer = setTimeout(() => {
-    alert("Dica: Tente retirar o tubo de memória do mcgucket");
-    reverseBtn.classList.remove('hidden');
-    audioPlayer.src = 'audio_2.mp3';
-    audioPlayer.play();
-    reverseBtn.classList.add('hidden');
-  }, 60000);
 });
 
 audioSlider.addEventListener('input', () => {
   const value = (audioSlider.value / 100) * audioPlayer.duration;
   audioPlayer.currentTime = value;
-  if (audioPlayer.paused) {
-    audioPlayer.play();
-  }
-
-  // Reiniciar o timer sempre que o slider for movido
-  clearTimeout(timer);
-  timer = setTimeout(() => {
-    alert("Dica: Tente retirar o tubo de memória do mcgucket");
-    reverseBtn.classList.remove('hidden');
-    audioPlayer.src = 'audio_2.mp3';
-    audioPlayer.play();
-    reverseBtn.classList.add('hidden');
-  }, 60000);
 });
+
+
+
+
+// Exibir mensagem após 2 minutos se o áudio não tiver sido trocado
+setTimeout(() => {
+   alert("Dica: Tente retirar o tubo de memória do mcgucket");
+
+      reverseBtn.classList.remove('hidden');
+    
+  
+});
+}, 60000); // 120000 milissegundos = 2 minutos
