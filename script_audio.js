@@ -8,6 +8,7 @@ const draggableImage = document.getElementById('draggable-image');
 let startY = 0;
 let isDragging = false;
 let audioChanged = false;
+let showedAlert = false;
 
 playBtn.addEventListener('click', () => {
   audioPlayer.play();
@@ -43,8 +44,9 @@ draggableImage.addEventListener('mousedown', (e) => {
 document.addEventListener('mousemove', (e) => {
   if (isDragging) {
     const deltaY = startY - e.clientY;
-    if (deltaY > 50) { // Ajuste o valor conforme necessário
-      reverseBtn.classList.remove('hidden');
+    if (deltaY > 50 && !showedAlert) {
+      alert("Dica: Tente retirar o tubo de memória do mcgucket");
+      showedAlert = true;
     }
   }
 });
@@ -54,9 +56,9 @@ document.addEventListener('mouseup', () => {
   draggableImage.style.cursor = 'grab';
 });
 
-// Exibir mensagem após 2 minutos se o áudio não tiver sido trocado
+// Exibir o botão de reverter áudio após 2 minutos, se o áudio não tiver sido trocado
 setTimeout(() => {
-  if (!audioChanged) {
-    alert("Dica: Tente retirar o tubo de memória do mcgucket");
+  if (!audioChanged && showedAlert) {
+    reverseBtn.classList.remove('hidden');
   }
-}, 60000); // 120000 milissegundos = 2 minutos
+}, 80000); // 120000 milissegundos = 2 minutos
