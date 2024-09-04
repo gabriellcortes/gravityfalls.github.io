@@ -8,7 +8,6 @@ const draggableImage = document.getElementById('draggable-image');
 let startY = 0;
 let isDragging = false;
 let audioChanged = false;
-let timeoutPassed = True;
 
 playBtn.addEventListener('click', () => {
   if (audioPlayer.paused) {
@@ -49,6 +48,5 @@ audioSlider.addEventListener('input', () => {
 // Exibir mensagem após 1 minuto se o áudio não tiver sido trocado
 setTimeout(() => {
     alert("Dica: Tente retirar o tubo de memória do mcgucket");
-    timeoutPassed = true;
     reverseBtn.classList.remove('hidden');
 }, 20000); // 60000 milissegundos = 1 minuto
