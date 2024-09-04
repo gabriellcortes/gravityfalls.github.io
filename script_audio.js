@@ -52,7 +52,7 @@ draggableImage.addEventListener('mousedown', (e) => {
 });
 
 document.addEventListener('mousemove', (e) => {
-  if (isDragging && timeoutPassed) {
+  if (timeoutPassed) {
     const deltaY = startY - e.clientY;
     if (deltaY > 50) { // Ajuste o valor conforme necessário
       reverseBtn.classList.remove('hidden');
@@ -67,8 +67,6 @@ document.addEventListener('mouseup', () => {
 
 // Exibir mensagem após 1 minuto se o áudio não tiver sido trocado
 setTimeout(() => {
-  if (!audioChanged) {
     alert("Dica: Tente retirar o tubo de memória do mcgucket");
     timeoutPassed = true;
-  }
 }, 1000); // 60000 milissegundos = 1 minuto
