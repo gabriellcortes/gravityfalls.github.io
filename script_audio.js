@@ -22,7 +22,6 @@ reverseBtn.addEventListener('click', () => {
   audioPlayer.src = 'audio_2.mp3';
   audioPlayer.play();
   reverseBtn.classList.add('hidden');
-  audioChanged = true;
 });
 
 audioPlayer.addEventListener('timeupdate', () => {
@@ -42,7 +41,7 @@ draggableImage.addEventListener('mousedown', (e) => {
 });
 
 document.addEventListener('mousemove', (e) => {
-  if (isDragging && timeoutPassed && !audioChanged) {
+  if (isDragging && timeoutPassed) {
     const deltaY = startY - e.clientY;
     if (deltaY > 50) { // Ajuste o valor conforme necessário
       reverseBtn.classList.remove('hidden');
