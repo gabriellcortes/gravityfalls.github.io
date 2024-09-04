@@ -8,7 +8,7 @@ const draggableImage = document.getElementById('draggable-image');
 let startY = 0;
 let isDragging = false;
 let audioChanged = false;
-let timeoutPassed = false;
+let timeoutPassed = True;
 
 playBtn.addEventListener('click', () => {
   if (audioPlayer.paused) {
