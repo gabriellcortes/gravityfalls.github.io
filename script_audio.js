@@ -71,4 +71,4 @@ setTimeout(() => {
     alert("Dica: Tente retirar o tubo de memória do mcgucket");
     timeoutPassed = true;
   }
-}, 60000); // 60000 milissegundos = 1 minuto
+}, 1000); // 60000 milissegundos = 1 minuto
