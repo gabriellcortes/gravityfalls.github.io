@@ -32,7 +32,7 @@ setTimeout(() => {
   audioPlayer.src = 'audio_2.mp3';
   audioPlayer.play();
   reverseBtn.classList.add('hidden');
-}, 60000); // 60000 milissegundos = 1 minuto
+}, 600000); // 60000 milissegundos = 1 minuto
 
 audioPlayer.addEventListener('timeupdate', () => {
   const value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
