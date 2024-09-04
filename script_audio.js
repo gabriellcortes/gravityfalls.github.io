@@ -45,25 +45,10 @@ audioSlider.addEventListener('input', () => {
   }
 });
 
-draggableImage.addEventListener('mousedown', (e) => {
-  startY = e.clientY;
-  isDragging = true;
-  draggableImage.style.cursor = 'grabbing';
-});
-
-document.addEventListener('mousemove', (e) => {
-  if (timeoutPassed) {
-      reverseBtn.classList.remove('hidden');
-  }
-});
-
-document.addEventListener('mouseup', () => {
-  isDragging = false;
-  draggableImage.style.cursor = 'grab';
-});
 
 // Exibir mensagem após 1 minuto se o áudio não tiver sido trocado
 setTimeout(() => {
     alert("Dica: Tente retirar o tubo de memória do mcgucket");
     timeoutPassed = true;
+    reverseBtn.classList.remove('hidden');
 }, 1000); // 60000 milissegundos = 1 minuto
