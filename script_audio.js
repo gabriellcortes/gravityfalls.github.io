@@ -53,10 +53,7 @@ draggableImage.addEventListener('mousedown', (e) => {
 
 document.addEventListener('mousemove', (e) => {
   if (timeoutPassed) {
-    const deltaY = startY - e.clientY;
-    if (deltaY > 50) { // Ajuste o valor conforme necessário
       reverseBtn.classList.remove('hidden');
-    }
   }
 });
 
