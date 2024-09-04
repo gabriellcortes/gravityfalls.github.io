@@ -9,6 +9,8 @@ let startY = 0;
 let isDragging = false;
 let audioChanged = false;
 
+let timer;
+
 playBtn.addEventListener('click', () => {
   if (audioPlayer.paused) {
     audioPlayer.play();
@@ -25,18 +27,28 @@ pauseBtn.addEventListener('click', () => {
   }
 });
 
-// Exibir mensagem após 1 minuto
-setTimeout(() => {
+// Iniciar o timer de 1 minuto
+timer = setTimeout(() => {
   alert("Dica: Tente retirar o tubo de memória do mcgucket");
   reverseBtn.classList.remove('hidden');
   audioPlayer.src = 'audio_2.mp3';
   audioPlayer.play();
   reverseBtn.classList.add('hidden');
-}, 600000); // 60000 milissegundos = 1 minuto
+}, 60000); // 60000 milissegundos = 1 minuto
 
 audioPlayer.addEventListener('timeupdate', () => {
   const value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
   audioSlider.value = value;
+
+  // Reiniciar o timer sempre que o áudio for reproduzido
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    alert("Dica: Tente retirar o tubo de memória do mcgucket");
+    reverseBtn.classList.remove('hidden');
+    audioPlayer.src = 'audio_2.mp3';
+    audioPlayer.play();
+    reverseBtn.classList.add('hidden');
+  }, 60000);
 });
 
 audioSlider.addEventListener('input', () => {
@@ -45,4 +57,14 @@ audioSlider.addEventListener('input', () => {
   if (audioPlayer.paused) {
     audioPlayer.play();
   }
+
+  // Reiniciar o timer sempre que o slider for movido
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    alert("Dica: Tente retirar o tubo de memória do mcgucket");
+    reverseBtn.classList.remove('hidden');
+    audioPlayer.src = 'audio_2.mp3';
+    audioPlayer.play();
+    reverseBtn.classList.add('hidden');
+  }, 60000);
 });
