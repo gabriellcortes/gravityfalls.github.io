@@ -32,10 +32,10 @@ audioSlider.addEventListener('input', () => {
   audioPlayer.currentTime = value;
 });
 
-
-// Exibir mensagem após 2 minutos se o áudio não tiver sido trocado
-setTimeout(() => {
-   alert("Okay, vou te dar uma mãozinha");
-   reverseBtn.classList.remove('hidden');
+// Executa a ação após 1 minuto iniciado a página
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    alert("Okay, vou te dar uma mãozinha");
+    reverseBtn.classList.remove('hidden');
+  }, 60000); // 60000 milissegundos = 1 minuto
 });
-}, 60000); // 120000 milissegundos = 2 minutos
