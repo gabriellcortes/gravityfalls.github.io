@@ -34,22 +34,22 @@ audioSlider.addEventListener('input', () => {
   audioPlayer.currentTime = value;
 });
 
-draggableImage.addEventListener('mousedown', (e) => {
-  startY = e.clientY;
+draggableImage.addEventListener('touchstart', (e) => {
+  startY = e.touches[0].clientY;
   isDragging = true;
   draggableImage.style.cursor = 'grabbing';
 });
 
-document.addEventListener('mousemove', (e) => {
+draggableImage.addEventListener('touchmove', (e) => {
   if (isDragging) {
-    const deltaY = startY - e.clientY;
+    const deltaY = startY - e.touches[0].clientY;
     if (deltaY > 50) { // Ajuste o valor conforme necessário
       reverseBtn.classList.remove('hidden');
     }
   }
 });
 
-document.addEventListener('mouseup', () => {
+draggableImage.addEventListener('touchend', () => {
   isDragging = false;
   draggableImage.style.cursor = 'grab';
 });
