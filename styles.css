@@ -1,44 +1,57 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    cursor: url('seta.png'), auto; /* Substitua 'seta.png' pelo arquivo de sua seta personalizada */
-  }
-  
-  .container {
-    position: relative;
-    display: inline-block;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .cabin-image {
-    max-width: 1000px;
-    height: auto;
-    display: block;
-  }
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  cursor: url('seta.png'), auto; /* Substitua 'seta.png' pelo arquivo de sua seta personalizada */
+}
 
-  .password-keyboard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #6F7C8E;
-    padding: 20px;
-    border-radius: 0;
+.container {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.cabin-image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) { /* Tablet */
+  .cabin-image {
+    max-width: 800px;
   }
-  
-  .key-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 0;
+}
+
+@media (max-width: 480px) { /* Celular */
+  .cabin-image {
+    max-width: 500px;
   }
+}
+
+.password-keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #6F7C8E;
+  padding: 20px;
+  border-radius: 0;
+}
+
+.key-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0;
+}
   
   .key {
     position: relative;
