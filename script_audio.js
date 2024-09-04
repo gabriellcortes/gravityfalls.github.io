@@ -38,7 +38,7 @@ audioPlayer.addEventListener('timeupdate', () => {
 audioSlider.addEventListener('input', () => {
   const value = (audioSlider.value / 100) * audioPlayer.duration;
   audioPlayer.currentTime = audioPlayer.duration - value;
-  audioPlayer.playbackRate = 1; // Define a velocidade como normal
+  audioPlayer.playbackRate = -1; // Define a velocidade como normal, mas no sentido inverso
   if (audioPlayer.paused) {
     audioPlayer.play();
   }
