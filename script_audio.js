@@ -39,11 +39,6 @@ audioPlayer.addEventListener('timeupdate', () => {
   audioSlider.value = value;
 });
 
-audioPlayer.addEventListener('ended', () => {
-  playBtn.disabled = false;
-  pauseBtn.disabled = true;
-  reverseBtn.classList.remove('hidden');
-});
 
 audioSlider.addEventListener('input', () => {
   const value = (audioSlider.value / 100) * audioPlayer.duration;
