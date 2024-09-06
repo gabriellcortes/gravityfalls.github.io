@@ -11,14 +11,12 @@ let isDragging = false;
 
 playBtn.addEventListener('click', () => {
   audioPlayer.play();
-  playBtn.disabled = true;
-  pauseBtn.disabled = false;
+  reverseBtn.classList.add('hidden');
+
 });
 
 pauseBtn.addEventListener('click', () => {
   audioPlayer.pause();
-  playBtn.disabled = false;
-  pauseBtn.disabled = true;
 });
 
 reverseBtn.addEventListener('click', () => {
@@ -30,8 +28,6 @@ reverseBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
   audioPlayer.currentTime = 0;
   audioPlayer.play();
-  playBtn.disabled = true;
-  pauseBtn.disabled = false;
 });
 
 audioPlayer.addEventListener('timeupdate', () => {
