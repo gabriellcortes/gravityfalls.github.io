@@ -35,7 +35,7 @@ audioPlayer.addEventListener('timeupdate', () => {
 
 audioPlayer.addEventListener('ended', () => {
   playBtn.disabled = false;
-  pauseBtn.disabled = false;
+  pauseBtn.disabled = true;
 });
 
 audioSlider.addEventListener('input', () => {
