@@ -10,19 +10,11 @@ let startY = 0;
 let isDragging = false;
 
 playBtn.addEventListener('click', () => {
-  if (audioPlayer.paused) {
     audioPlayer.play();
-    playBtn.classList.add('hidden');
-    pauseBtn.classList.remove('hidden');
-  }
 });
 
 pauseBtn.addEventListener('click', () => {
-  if (!audioPlayer.paused) {
     audioPlayer.pause();
-    pauseBtn.classList.add('hidden');
-    playBtn.classList.remove('hidden');
-  }
 });
 
 reverseBtn.addEventListener('click', () => {
@@ -34,18 +26,12 @@ reverseBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
   audioPlayer.currentTime = 0;
   audioPlayer.pause();
-  playBtn.classList.remove('hidden');
-  pauseBtn.classList.add('hidden');
 });
 
 audioPlayer.addEventListener('timeupdate', () => {
   const value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
   audioSlider.value = value;
 
-  if (audioPlayer.currentTime === audioPlayer.duration) {
-    playBtn.classList.remove('hidden');
-    pauseBtn.classList.add('hidden');
-  }
 });
 
 audioSlider.addEventListener('input', () => {
