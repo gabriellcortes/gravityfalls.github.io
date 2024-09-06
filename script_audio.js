@@ -36,10 +36,6 @@ audioPlayer.addEventListener('ended', () => {
   isPlaying = false;
 });
 
-audioSlider.addEventListener('input', () => {
-  audioPlayer.currentTime = (audioSlider.value / 100) * audioPlayer.duration;
-});
-
 audioPlayer.addEventListener('timeupdate', () => {
   audioSlider.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
 });
