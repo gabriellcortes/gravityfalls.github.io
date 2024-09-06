@@ -31,7 +31,11 @@ resetBtn.addEventListener('click', () => {
 audioPlayer.addEventListener('timeupdate', () => {
   const value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
   audioSlider.value = value;
+});
 
+audioPlayer.addEventListener('ended', () => {
+  playBtn.disabled = false;
+  pauseBtn.disabled = false;
 });
 
 audioSlider.addEventListener('input', () => {
