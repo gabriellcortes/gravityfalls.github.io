@@ -4,7 +4,6 @@ const resetBtn = document.getElementById('reset-btn');
 const reverseBtn = document.getElementById('reverse-btn');
 const audioPlayer = document.getElementById('audio-player');
 const audioSlider = document.getElementById('audio-slider');
-const draggableImage = document.getElementById('draggable-image');
 
 let isPlaying = false;
 
