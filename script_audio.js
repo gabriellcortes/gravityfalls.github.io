@@ -31,9 +31,9 @@ reverseBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', () => {
   audioPlayer.currentTime = 0;
-  audioPlayer.pause();
-  playBtn.disabled = false;
-  pauseBtn.disabled = true;
+  audioPlayer.play();
+  playBtn.disabled = true;
+  pauseBtn.disabled = false;
 });
 
 audioPlayer.addEventListener('timeupdate', () => {
