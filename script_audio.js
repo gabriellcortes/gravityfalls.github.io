@@ -22,9 +22,9 @@ pauseBtn.addEventListener('click', () => {
 });
 
 reverseBtn.addEventListener('click', () => {
+  audioPlayer.src = 'audio_2.mp3';
   audioPlayer.play();
-  playBtn.disabled = true;
-  pauseBtn.disabled = false;
+  reverseBtn.classList.add('hidden');
 });
 
 resetBtn.addEventListener('click', () => {
