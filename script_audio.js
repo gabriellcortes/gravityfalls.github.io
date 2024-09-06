@@ -10,22 +10,30 @@ let startY = 0;
 let isDragging = false;
 
 playBtn.addEventListener('click', () => {
-    audioPlayer.play();
+  audioPlayer.play();
+  playBtn.disabled = true;
+  pauseBtn.disabled = false;
 });
 
 pauseBtn.addEventListener('click', () => {
-    audioPlayer.pause();
+  audioPlayer.pause();
+  playBtn.disabled = false;
+  pauseBtn.disabled = true;
 });
 
 reverseBtn.addEventListener('click', () => {
   audioPlayer.src = 'audio_2.mp3';
   audioPlayer.play();
   reverseBtn.classList.add('hidden');
+  playBtn.disabled = true;
+  pauseBtn.disabled = false;
 });
 
 resetBtn.addEventListener('click', () => {
   audioPlayer.currentTime = 0;
   audioPlayer.pause();
+  playBtn.disabled = false;
+  pauseBtn.disabled = true;
 });
 
 audioPlayer.addEventListener('timeupdate', () => {
@@ -36,6 +44,7 @@ audioPlayer.addEventListener('timeupdate', () => {
 audioPlayer.addEventListener('ended', () => {
   playBtn.disabled = false;
   pauseBtn.disabled = true;
+  reverseBtn.classList.remove('hidden');
 });
 
 audioSlider.addEventListener('input', () => {
