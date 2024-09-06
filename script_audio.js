@@ -36,10 +36,6 @@ audioPlayer.addEventListener('ended', () => {
   isPlaying = false;
 });
 
-audioPlayer.addEventListener('timeupdate', () => {
-  audioSlider.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-});
-
 // Executa a ação após 1 minuto iniciado a página
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
